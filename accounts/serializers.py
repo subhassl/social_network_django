@@ -43,3 +43,8 @@ class LoginSerializer(serializers.Serializer):
 
         attrs["user"] = user
         return attrs
+
+
+class UserSearchSerializer(serializers.Serializer):
+    search_keyword = serializers.CharField(max_length=100)
+    page = serializers.IntegerField(default=1)
