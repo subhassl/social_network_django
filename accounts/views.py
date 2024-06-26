@@ -9,6 +9,9 @@ from rest_framework.authtoken.models import Token
 
 
 class SignupView(APIView):
+    # Making it accessible to unauthenticated users.
+    permission_classes = []
+
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
@@ -19,6 +22,9 @@ class SignupView(APIView):
 
 
 class LoginView(APIView):
+    # Making it accessible to unauthenticated users.
+    permission_classes = []
+
     def post(self, request):
         serializer = LoginSerializer(data=request.data, context={"request": request})
         if serializer.is_valid():
