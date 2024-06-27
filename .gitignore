@@ -7,6 +7,7 @@ local_settings.py
 
 .env
 db.sqlite3
+app.log
 
 .DS_Store
 .AppleDouble
