@@ -30,14 +30,26 @@ Steps to crate the .env file:
 SECRET_KEY="your_secret_key_here"
 ```
 
-### Command to start the Django server
+You can create your own secret key here: https://djecrety.ir/
+
+### Command to build and start the server
 
 ```
 $ docker-compose up --build
 ```
 
+This command brings up the Django server in port `:8080`.
+
+It automatically creates the sqlite3 database file and the logs are stored in a file named `app.log` in the root directory.
+
 ### Command to crearte superuser
 
 ```
 $ docker-compose run web python manage.py createsuperuser
+```
+
+### Command to run unit tests
+
+```
+$ docker-compose run web python3 manage.py test friends
 ```
